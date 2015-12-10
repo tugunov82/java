@@ -27,7 +27,7 @@ public class Calculator {
 				input1 = digits.nextInt();
 			}else {
 				System.out.println("hernya v input1");
-				return;
+				continue;
 			}
 			
 			System.out.print("+, -, / или *");
@@ -76,7 +76,7 @@ public class Calculator {
 				}
 				if(input2 == 0){
 					System.out.println("на ноль делить нельзя!!11");
-					return;
+					continue;
 				}
 				result = input1 / input2;
 				System.out.println("Результат: " + result);

@@ -53,7 +53,7 @@ public class Test {
 				if(in2 == 0){
 					System.out.print("divide by zero");
 					sc.close();
-					return;
+					continue;
 				}else{
 					result = in1 / in2;
 					System.out.print("result: " + result + '\n');
