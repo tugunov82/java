@@ -11,25 +11,25 @@ public class Test {
 		String operation = null;
 		int in1 = 0, in2 = 0, result = 0;
 		
-		Scanner scd = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		
 		try{
 			System.out.print("enter 1: " + '\n');
-			if(scd.hasNextInt()){
-				in1 = scd.nextInt();
-				scd.nextLine();
+			if(sc.hasNextInt()){
+				in1 = sc.nextInt();
+				sc.nextLine();
 			}
 			
 			System.out.print("enter op: " + '\n');
-			if(scd.hasNextLine()){
-			operation = scd.nextLine();
+			if(sc.hasNextLine()){
+			operation = sc.nextLine();
 			}
 			
 			
 			System.out.print("enter 2: " + '\n');
-			if(scd.hasNextInt()){
-				in2 = scd.nextInt();
-				scd.nextLine();
+			if(sc.hasNextInt()){
+				in2 = sc.nextInt();
+				sc.nextLine();
 			}
 			
 			switch (operation){
@@ -60,7 +60,7 @@ public class Test {
 				
 			}
 		}finally{
-			scd.close();
+			sc.close();
 		}
 		
 	}
