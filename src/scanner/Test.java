@@ -59,7 +59,7 @@ public class Test {
 				}
 				
 			}
-		}finally{
+		}catch(Exception scanner) {
 			sc.close();
 		}
 		
