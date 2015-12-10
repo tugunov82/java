@@ -1,107 +1,74 @@
 package scanner;
+
 import java.util.Scanner;
+
 public class Calculator {
 
-	public static void main(String[] args) {
-		
-		boolean loop = true;
-		while(loop){
-		
-		int input1 = 0, input2 = 0, result = 0;
-		String operation = null;
-		String startOver = null;
-		
-		
-		
-		
-		Scanner digits = new Scanner(System.in);
-		Scanner loopSC = new Scanner(System.in);
-		Scanner opSC = new Scanner(System.in);
-		Scanner trash = new Scanner(System.in);
-		
-		try{
-			
-			System.out.println("input1 = " + input1);
-			System.out.print("Г‚ГўГҐГ¤ГЁГІГҐ ГЇГҐГ°ГўГ®ГҐ Г·ГЁГ±Г«Г®: " + '\r');
-			if(digits.hasNextInt()){
-				System.out.println("input1 = " + input1);
-				input1 = digits.nextInt();
-				}else {
-				System.out.println("hernya v input1");
-				return;
-			}
-			
-			System.out.print("+, -, / ГЁГ«ГЁ *" + '\r');
-			if(opSC.hasNextLine()){
-				operation = opSC.nextLine();
-			}
-			
-			
-			switch (operation){
-			
-			case "+":
-				System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГўГІГ®Г°Г®ГҐ Г·ГЁГ±Г«Г®: " + '\r');
-				if(digits.hasNextInt()){
-					input2 = digits.nextInt();
-					digits.nextLine();
-				}
-				result = input1 + input2;
-				System.out.println("ГђГҐГ§ГіГ«ГјГІГ ГІ: " + result);
-			break;
-			
-			case "-":
-				System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГўГІГ®Г°Г®ГҐ Г·ГЁГ±Г«Г®: " + '\r');
-				if(digits.hasNextInt()){
-					input2 = digits.nextInt();
-					digits.nextLine();
-				}
-				result = input1 - input2;
-				System.out.println("ГђГҐГ§ГіГ«ГјГІГ ГІ: " + result);
-			break;
-			
-			case "*":
-				System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГўГІГ®Г°Г®ГҐ Г·ГЁГ±Г«Г®: " + '\r');
-				if(digits.hasNextInt()){
-					input2 = digits.nextInt();
-					digits.nextLine();
-				}
-				result = input1 * input2;
-				System.out.println("ГђГҐГ§ГіГ«ГјГІГ ГІ: " + result);
-			break;
-			
-			case "/":
-				System.out.print("Г‚ГўГҐГ¤ГЁГІГҐ ГўГІГ®Г°Г®ГҐ Г·ГЁГ±Г«Г®: " + '\r');
-				if(digits.hasNextInt()){
-					input2 = digits.nextInt();
-					digits.nextLine();
-				}
-				if(input2 == 0){
-					System.out.println("Г­Г  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!!11");
-					return;
-				}
-				result = input1 / input2;
-				System.out.println("ГђГҐГ§ГіГ«ГјГІГ ГІ: " + result);
-			break;
-			
-			default: System.out.println("hernya");
-			}
-			System.out.println("input1 = " + input1);
-		}finally {
-			digits.reset();
-			digits.close();
-			digits = null;
-		}
-		
-		
-//			System.out.print("ГЌГ Г¦Г¬ГЁГІГҐ Г«ГѕГЎГіГѕ ГЄГ«Г ГўГЁГёГі, Г·ГІГ®ГЎГ» Г­Г Г·Г ГІГј Г±Г­Г Г·Г Г«Г  ГЁГ«ГЁ Г­ГҐГІ Г¤Г«Гї ГўГ»ГµГ®Г¤Г " + '\r');
-			//startOver = loopSC.nextLine();
-			
-			if("Г­ГҐГІ".equals(startOver)){
-				loop = false;
-				System.out.println("Г‚Г±ГҐ-ГЈГ® ГµГ®Г°Г®-ГёГҐГЈГ®");
-			}
-		
-		
-	}
-	}
+    public static void main(String[] args) {
+
+        boolean loop = true;
+
+        String operation = null;
+        Scanner digits = new Scanner(System.in);
+        Scanner opSC = new Scanner(System.in);
+        Integer result;
+
+        do {
+            int input1 = 0, input2 = 0;
+            result = null;
+            try {
+                System.out.print("Введите первое число: ");
+                if (digits.hasNextInt()) {
+                    input1 = digits.nextInt();
+                } else {
+                    System.out.println("hernya v input1");
+                }
+
+                System.out.print("+, -, / или * ");
+                if (opSC.hasNextLine()) {
+                    operation = opSC.nextLine();
+                }
+
+                System.out.print("Введите второе число: ");
+                if (digits.hasNextInt()) {
+                    input2 = digits.nextInt();
+                    digits.nextLine();
+                }
+
+                switch (operation) {
+                    case "+":
+                        result = input1 + input2;
+                        break;
+                    case "-":
+                        result = input1 - input2;
+                        break;
+                    case "*":
+                        result = input1 * input2;
+                        break;
+                    case "/":
+                        if (input2 == 0) {
+                            System.out.println("на ноль делить нельзя!!11");
+                            continue;
+                        }
+                        result = input1 / input2;
+                        break;
+                    default:
+                        System.out.println("hernya");
+                }
+            } catch (Exception scanner) {
+                System.out.println(scanner);
+            }
+            if (result != null) {
+                System.out.println("Результат: " + result);
+            }
+//			System.out.print("Нажмите любую клавишу, чтобы начать сначала или нет для выхода" + '\r');
+            //startOver = loopSC.nextLine();
+//            if ("нет".equals(startOver)) {
+//                loop = false;
+//                System.out.println("Все-го хоро-шего");
+//            }
+        } while (result != null && loop);
+        digits.close();
+        opSC.close();
+    }
 }
