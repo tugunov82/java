@@ -8,7 +8,7 @@ public class Test {
 		
 		while (loop){
 		
-		String operation;
+		String operation = null;
 		int in1 = 0, in2 = 0, result = 0;
 		
 		Scanner scd = new Scanner(System.in);
@@ -21,7 +21,10 @@ public class Test {
 			}
 			
 			System.out.print("enter op: " + '\n');
+			if(scd.hasNextLine()){
 			operation = scd.nextLine();
+			}
+			
 			
 			System.out.print("enter 2: " + '\n');
 			if(scd.hasNextInt()){
