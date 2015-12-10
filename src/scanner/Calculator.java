@@ -22,17 +22,16 @@ public class Calculator {
 		try{
 			
 			System.out.println("input1 = " + input1);
-			System.out.print("Введите первое число: " + '\r');
+			System.out.print("Г‚ГўГҐГ¤ГЁГІГҐ ГЇГҐГ°ГўГ®ГҐ Г·ГЁГ±Г«Г®: " + '\r');
 			if(digits.hasNextInt()){
 				System.out.println("input1 = " + input1);
 				input1 = digits.nextInt();
-				trash.nextLine();
-			}else {
+				}else {
 				System.out.println("hernya v input1");
 				return;
 			}
 			
-			System.out.print("+, -, / или *" + '\r');
+			System.out.print("+, -, / ГЁГ«ГЁ *" + '\r');
 			if(opSC.hasNextLine()){
 				operation = opSC.nextLine();
 			}
@@ -41,47 +40,47 @@ public class Calculator {
 			switch (operation){
 			
 			case "+":
-				System.out.println("Введите второе число: " + '\r');
+				System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГўГІГ®Г°Г®ГҐ Г·ГЁГ±Г«Г®: " + '\r');
 				if(digits.hasNextInt()){
 					input2 = digits.nextInt();
 					digits.nextLine();
 				}
 				result = input1 + input2;
-				System.out.println("Результат: " + result);
+				System.out.println("ГђГҐГ§ГіГ«ГјГІГ ГІ: " + result);
 			break;
 			
 			case "-":
-				System.out.println("Введите второе число: " + '\r');
+				System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГўГІГ®Г°Г®ГҐ Г·ГЁГ±Г«Г®: " + '\r');
 				if(digits.hasNextInt()){
 					input2 = digits.nextInt();
 					digits.nextLine();
 				}
 				result = input1 - input2;
-				System.out.println("Результат: " + result);
+				System.out.println("ГђГҐГ§ГіГ«ГјГІГ ГІ: " + result);
 			break;
 			
 			case "*":
-				System.out.println("Введите второе число: " + '\r');
+				System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГўГІГ®Г°Г®ГҐ Г·ГЁГ±Г«Г®: " + '\r');
 				if(digits.hasNextInt()){
 					input2 = digits.nextInt();
 					digits.nextLine();
 				}
 				result = input1 * input2;
-				System.out.println("Результат: " + result);
+				System.out.println("ГђГҐГ§ГіГ«ГјГІГ ГІ: " + result);
 			break;
 			
 			case "/":
-				System.out.print("Введите второе число: " + '\r');
+				System.out.print("Г‚ГўГҐГ¤ГЁГІГҐ ГўГІГ®Г°Г®ГҐ Г·ГЁГ±Г«Г®: " + '\r');
 				if(digits.hasNextInt()){
 					input2 = digits.nextInt();
 					digits.nextLine();
 				}
 				if(input2 == 0){
-					System.out.println("на ноль делить нельзя!!11");
+					System.out.println("Г­Г  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!!11");
 					return;
 				}
 				result = input1 / input2;
-				System.out.println("Результат: " + result);
+				System.out.println("ГђГҐГ§ГіГ«ГјГІГ ГІ: " + result);
 			break;
 			
 			default: System.out.println("hernya");
@@ -94,12 +93,12 @@ public class Calculator {
 		}
 		
 		
-//			System.out.print("Нажмите любую клавишу, чтобы начать сначала или нет для выхода" + '\r');
+//			System.out.print("ГЌГ Г¦Г¬ГЁГІГҐ Г«ГѕГЎГіГѕ ГЄГ«Г ГўГЁГёГі, Г·ГІГ®ГЎГ» Г­Г Г·Г ГІГј Г±Г­Г Г·Г Г«Г  ГЁГ«ГЁ Г­ГҐГІ Г¤Г«Гї ГўГ»ГµГ®Г¤Г " + '\r');
 			//startOver = loopSC.nextLine();
 			
-			if("нет".equals(startOver)){
+			if("Г­ГҐГІ".equals(startOver)){
 				loop = false;
-				System.out.println("Все-го хоро-шего");
+				System.out.println("Г‚Г±ГҐ-ГЈГ® ГµГ®Г°Г®-ГёГҐГЈГ®");
 			}
 		
 		
