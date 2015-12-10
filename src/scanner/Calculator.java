@@ -17,22 +17,21 @@ public class Calculator {
 		Scanner digits = new Scanner(System.in);
 		Scanner loopSC = new Scanner(System.in);
 		Scanner opSC = new Scanner(System.in);
-		Scanner trash = new Scanner(System.in);
 		
 		try{
 			
-			System.out.println("input1 = " + input1);
-			System.out.print("¬ведите первое число: " + '\r');
+//			System.out.println("input1 = " + input1);
+			System.out.print("¬ведите первое число: ");
 			if(digits.hasNextInt()){
-				System.out.println("input1 = " + input1);
+//				System.out.println("input1 = " + input1);
 				input1 = digits.nextInt();
-				trash.nextLine();
+				digits.nextLine();
 			}else {
 				System.out.println("hernya v input1");
 				return;
 			}
 			
-			System.out.print("+, -, / или *" + '\r');
+			System.out.print("+, -, / или *");
 			if(opSC.hasNextLine()){
 				operation = opSC.nextLine();
 			}
@@ -41,7 +40,7 @@ public class Calculator {
 			switch (operation){
 			
 			case "+":
-				System.out.println("¬ведите второе число: " + '\r');
+				System.out.print("¬ведите второе число: ");
 				if(digits.hasNextInt()){
 					input2 = digits.nextInt();
 					digits.nextLine();
@@ -51,7 +50,7 @@ public class Calculator {
 			break;
 			
 			case "-":
-				System.out.println("¬ведите второе число: " + '\r');
+				System.out.print("¬ведите второе число: ");
 				if(digits.hasNextInt()){
 					input2 = digits.nextInt();
 					digits.nextLine();
@@ -61,17 +60,17 @@ public class Calculator {
 			break;
 			
 			case "*":
-				System.out.println("¬ведите второе число: " + '\r');
+				System.out.print("¬ведите второе число: ");
 				if(digits.hasNextInt()){
 					input2 = digits.nextInt();
 					digits.nextLine();
 				}
 				result = input1 * input2;
-				System.out.println("–езультат: " + result);
+				System.out.print("–езультат: " + result);
 			break;
 			
 			case "/":
-				System.out.print("¬ведите второе число: " + '\r');
+				System.out.print("¬ведите второе число: ");
 				if(digits.hasNextInt()){
 					input2 = digits.nextInt();
 					digits.nextLine();

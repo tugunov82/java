@@ -4,20 +4,62 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		String operation;
+		boolean loop = true;
 		
-		Scanner sc = new Scanner(System.in);
+		while (loop){
+		
+		String operation;
+		int in1 = 0, in2 = 0, result = 0;
+		
+		Scanner scd = new Scanner(System.in);
 		
 		try{
-			System.out.print("enter: ");
-			if(sc.hasNextLine()){
-				operation = sc.nextLine();
+			System.out.print("enter 1: " + '\n');
+			if(scd.hasNextInt()){
+				in1 = scd.nextInt();
+				scd.nextLine();
 			}
 			
-		}finally{
+			System.out.print("enter op: " + '\n');
+			operation = scd.nextLine();
 			
-		}sc.close();
+			System.out.print("enter 2: " + '\n');
+			if(scd.hasNextInt()){
+				in2 = scd.nextInt();
+				scd.nextLine();
+			}
+			
+			switch (operation){
+			
+			case "+":
+				result = in1 + in2;
+				System.out.print("result: " + result + '\n');
+				break;
+				
+			case "-":
+				result = in1 - in2;
+				System.out.print("result: " + result + '\n');
+				break;
+				
+			case "*":
+				result = in1 * in2;
+				System.out.print("result: " + result + '\n');
+				break;
+				
+			case "/":
+				if(in2 == 0){
+					System.out.print("divide by zero");
+					return;
+				}else{
+					result = in1 / in2;
+					System.out.print("result: " + result + '\n');
+				}
+				
+			}
+		}finally{
+			scd.close();
+		}
 		
 	}
-
+  }	
 }
