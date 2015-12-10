@@ -52,6 +52,7 @@ public class Test {
 			case "/":
 				if(in2 == 0){
 					System.out.print("divide by zero");
+					sc.close();
 					return;
 				}else{
 					result = in1 / in2;
